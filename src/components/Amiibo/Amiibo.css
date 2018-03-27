@@ -1,0 +1,33 @@
+img{
+    width: 12vw;
+    height: auto;
+}
+
+.charCard{
+    width: 13vw;
+    height:auto;
+    margin:3%;
+}
+
+h2{
+    font-size: 1.2em;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 0px;
+}
+
+.series{
+    font-size: .8em;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 0px;
+}
+
+button{
+    outline: none;
+    border-radius: 21px;
+    font-size: 12px;
+    border: 1px solid #2aabe2;
+    padding: 8px 34px 8px 34px;
+    width: auto;
+    font-family: 'Open Sans', sans-serif;
+}
+

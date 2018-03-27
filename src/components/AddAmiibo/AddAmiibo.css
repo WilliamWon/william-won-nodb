@@ -1,0 +1,26 @@
+.post-Amiibo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 350px;
+    width: 100%;
+    /* margin-bottom: 120px; */
+}
+.create-ami{
+    font-family: 'Tauri', sans-serif;
+    font-size: 2.4em;
+    margin-top: 30px;
+}
+.post-button{
+    position:relative;
+    font-family: 'Tauri', sans-serif;
+    text-align: center;
+    top: 50px;
+}
+.one{
+    top: 10px;
+}
+.two{
+    top: 20px;
+}
