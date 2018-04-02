@@ -6,10 +6,13 @@ class AddAmiibo extends Component {
         super();
         this.state = {
             name: "",
-            amiiboSeries: ""
-            // amiImage: "https://esmemes.com/i/only-nintendo-fans-will-und-stand-the-wit-u-was-13573992"
+            amiiboSeries: "",
+            amiImage: ""
         }
         this.handleAdded = this.handleAdded.bind(this);
+        this.handleName = this.handleName.bind(this);
+        this.handleImage = this.handleImage.bind(this);
+        this.handleAmiiboSeries = this.handleAmiiboSeries.bind(this);
     }
 
     handleName(val){
@@ -20,37 +23,43 @@ class AddAmiibo extends Component {
         this.setState({amiiboSeries:val})
     }
     
-    // handleImage(val){
-    //     this.setState({amiImage:val})
-    // }
+    handleImage(val){
+        this.setState({amiImage:val})
+    }
 
     handleAdded(){
         const {newAmiibo} = this.props;
-        const {name,amiiboSeries} = this.state;
-        newAmiibo(name,amiiboSeries);
-        this.setState({name: "",amiiboSeries: ""})
+        const {name,amiiboSeries,amiImage} = this.state;
+        newAmiibo(name,amiiboSeries,amiImage);
+        this.setState({name: "",amiiboSeries: "",amiImage: ""})
     }
 
     render(){
-        const {name,amiiboSeries} = this.state;
+        const {name,amiiboSeries, amiImage } = this.state;
         return(
             <div className="post-Amiibo">
                 <p className="create-ami">Create-An-Amiibo</p>
-                <input 
-                    className="post-input one"
-                    placeholder="Name"
-                    value={name}
-                    onChange={e => this.handleName(e.target.value)}
-                />
-                <input
-                    className="post-input two"
-                    placeholder="Amiibo Series"
-                    value={amiiboSeries}
-                    onChange={e => this.handleAmiiboSeries(e.target.value)}
-                />
-
-                {/* <input type="file" onChange={e => this.handleImage(e.target.value)}/> */}
-
+                    <div className="submission">
+                        <input 
+                            className="one"
+                            placeholder="Name"
+                            value={name}
+                            onChange={e => this.handleName(e.target.value)}
+                            />
+                        <input
+                            className="two"
+                            placeholder="Amiibo Series"
+                            value={amiiboSeries}
+                            onChange={e => this.handleAmiiboSeries(e.target.value)}
+                            />
+                        <input 
+                            className="three"
+                            value={amiImage}
+                            placeholder="Image Url" type="text"
+                            onChange={e=> this.handleImage(e.target.value)}
+                            />
+                    </div>
+                
                 <button className="post-button" onClick={this.handleAdded}>
                     Create
                 </button>

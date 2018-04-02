@@ -1,20 +1,15 @@
 import React, {Component} from 'react';
-import "./Amiibo.css";
 
-class Amiibo extends Component{
+class Favorites extends Component{
     constructor(props){
         super();
         this.state = {
             name: props.name,
-            amiiboSeries: props.amiiboSeries,
-            inputSwitch:false
+            ammiboSeries: props.amiiboSeries,
+            inputSwitch:
         }
-        this.handleSwitch = this.handleSwitch.bind(this);
-        this.handleName = this.handleName.bind(this);
-        this.handleSeries = this.handleSeries.bind(this);
-        this.handleConfirm = this.handleConfirm.bind(this);
     }
-    
+
     handleSwitch(){
         this.setState({
             inputSwitch: !this.state.inputSwitch
@@ -31,19 +26,16 @@ class Amiibo extends Component{
         })
     }
     handleConfirm(){
-        const {updateToy, id} = this.props;
+        const {updateToy, tail} = this.props;
         const {name, amiiboSeries} = this.state;
-        updateToy(id,name,amiiboSeries);
+        updateToy(tail,name,amiiboSeries);
         this.setState({
             inputSwitch: !this.state.inputSwitch
         })
     }
-    
     render(){
-        const {deleteToy, id, toyImage} = this.props;
-        const {inputSwitch, name, amiiboSeries} = this.state
         return(
-             <div className="charCard">
+            <div className="charCard">
               {!inputSwitch ? (
                 <div>
                     <div className="charInfo">
@@ -54,7 +46,7 @@ class Amiibo extends Component{
                         <div>
                             {/* <button onClick={}>Add</button> */}
                             <button onClick={this.handleSwitch}>Edit</button>
-                            <button onClick={()=> deleteToy(id)}>Delete</button>
+                            <button onClick={()=> deleteToy(tail)}>Delete</button>
                         </div>
                 </div>
               ) : (
@@ -70,5 +62,3 @@ class Amiibo extends Component{
         )
     }
 }
-
-export default Amiibo;

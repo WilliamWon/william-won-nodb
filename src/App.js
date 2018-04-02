@@ -3,6 +3,8 @@ import './App.css';
 import axios from 'axios';
 import Amiibo from './components/Amiibo/Amiibo';
 import AddAmiibo from './components/AddAmiibo/AddAmiibo';
+import logo from "./Wintendo.png"
+import Footer from './components/Footer/Footer'
 
 class App extends Component {
   constructor(){
@@ -10,7 +12,8 @@ class App extends Component {
     this.state = {
       toys: [],
       userInput: "",
-      loading: true
+      loading: true,
+      favorite: false
     }
     this.updateAmiibo = this.updateAmiibo.bind(this);
     this.deleteAmiibo = this.deleteAmiibo.bind(this);
@@ -19,25 +22,26 @@ class App extends Component {
 
   componentDidMount(){
     axios.get("/api/toys").then(res => {
-      console.log(res.data)
       this.setState({toys:res.data, loading: false})
     })
   }
 
   updateAmiibo(id, name, amiiboSeries){
     axios.put(`/api/toys/${id}`, {name, amiiboSeries}).then(res => {
-      this.setState({toys: res.data.amiibo})
+      console.log(res.data)
+      this.setState({toys: res.data})
     })
   }
 
   deleteAmiibo(id) {
     axios.delete(`/api/toys/${id}`).then(res => {
-      this.setState({characters: res.data.amiibo})
+      this.setState({toys: res.data})
     })
   }
   
-  newAmiibo(name,amiiboSeries){
-    axios.post(`/api/toys`, {name, amiiboSeries}).then(res => {
+  newAmiibo(name,amiiboSeries,image){
+    axios.post(`/api/toys`, {name, amiiboSeries,image}).then(res => {
+      console.log(res.data)
       this.setState({toys: res.data})
     })
   }
@@ -47,6 +51,8 @@ class App extends Component {
       userInput: val
     })
   }
+
+  
 
   render() {
     const {loading, toys, userInput } = this.state;
@@ -64,6 +70,7 @@ class App extends Component {
       }
     }).map(toy => {
       let id = toy.head.concat(toy.tail);
+      console.log(id);
       return(
         <Amiibo
           key={id}
@@ -80,8 +87,11 @@ class App extends Component {
     return (
       <div className="App">
         <div className="homePg">
+          <div className="logo-carrier">
+            <img className="logo" src={logo} alt="logo"/>
+          </div>
           <h3>myAmiibo</h3>
-          <input placeholder="Find your Amiibos" onChange={e=>this.typing(e.target.value)} />
+          <input className="Search-bar"placeholder="Find your Amiibos" onChange={e=>this.typing(e.target.value)} />
         </div>
         {/* {console.log(toys)} */}
         <div className="amiiboBody">
@@ -90,10 +100,23 @@ class App extends Component {
         <div className="myAmiibos">
         </div>
         <div>
+         <AddAmiibo
+           newAmiibo={this.newAmiibo}
+         />
+        </div>
+        {/* {this.state.favorites.length  > 0 ?
+        (<div>
           <AddAmiibo
             newAmiibo={this.newAmiibo}
           />
-        </div>
+        </div> ):
+         (<div>
+         <AddAmiibo
+           newAmiibo={this.newAmiibo}
+         />
+       </div>)}
+        } */}
+        <Footer />
       </div>
     );
   }
