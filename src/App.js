@@ -13,7 +13,8 @@ class App extends Component {
       toys: [],
       userInput: "",
       loading: true,
-      favorite: false
+      favorite: false,
+      favoriteList: []
     }
     this.updateAmiibo = this.updateAmiibo.bind(this);
     this.deleteAmiibo = this.deleteAmiibo.bind(this);
@@ -50,6 +51,9 @@ class App extends Component {
     this.setState({
       userInput: val
     })
+  }
+  addFavorite(){
+    
   }
 
   

@@ -1,43 +1,67 @@
-.cardImage{
-    width: 140px;
-    height: auto;
-    margin-bottom: 15px;
+.cardImage {
+  width: 140px;
+  height: auto;
+  margin: 14px 0 20px 0;
 }
 
-.charCard{
-    width: 140px;
-    height:auto;
-    margin:3%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.charCard {
+  width: 200px;
+  height: auto;
+  margin: 25px 0 15px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: teal; */
 }
 
-h2{
-    font-size: 1.2em;
-    font-family: 'Open Sans', sans-serif;
-    margin-bottom: 0px;
-    text-align: center;
-    color: #25282d;
+h2 {
+  font-size: 1.2em;
+  font-family: "Open Sans", sans-serif;
+  margin-bottom: 0px;
+  text-align: center;
+  color: #25282d;
 }
 
-.series{
-    font-size: .8em;
-    font-family: 'Open Sans', sans-serif;
-    margin-top: 0px;
-    text-align: center;
-    color: #25282d;
+.series {
+  font-size: 0.8em;
+  font-family: "Open Sans", sans-serif;
+  margin-top: 0px;
+  text-align: center;
+  color: #25282d;
 }
 
-button{
-    /* outline: none;
-    border-radius: 21px;
-    font-size: 12px;
-    border: 1px solid #2aabe2;
-    padding: 8px 34px 8px 34px;
-    width: 8px;
-    font-family: 'Open Sans', sans-serif;
-    text-align: center; */
-    color:#25282d;
+button {
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 3px;
+  border: none;
+  padding: 2.5px 11px 3px 11px;
+  background: #25282d;
+  color: white;
+  letter-spacing: 0.5px;
 }
 
+.infoChange {
+  border-radius: 3px;
+  height: 12px;
+  width: 150px;
+  margin-bottom: 5px;
+}
+
+.editContainer {
+  /* background: teal; */
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.leftButton {
+  margin-right: 4px;
+}
+.innerCard {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

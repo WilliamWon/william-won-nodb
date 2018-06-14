@@ -1,7 +1,6 @@
-
-.amiiboBody{
+.amiiboBody {
   width: auto;
-  height:auto;
+  height: auto;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -10,18 +9,18 @@
   padding: 0px 40px 0px 40px;
 }
 
-.homePg{
+.homePg {
   position: relative;
-  width:100%;
+  width: 100%;
   height: 703px;
   display: flex;
   flex-direction: column;
-  align-items: center; 
+  align-items: center;
   background-color: #2aabe2;
 }
-h3{
-  position:relative;
-  font-family: 'Tauri', sans-serif;
+h3 {
+  position: relative;
+  font-family: "Tauri", sans-serif;
   font-size: 9em;
   width: 700px;
   height: 200px;
@@ -29,7 +28,7 @@ h3{
   top: 185px;
   color: white;
 }
-input{
+input {
   width: 200px;
   height: 20px;
   text-align: center;
@@ -38,25 +37,25 @@ input{
   font-size: 12px;
   border: 1px solid #2aabe2;
   padding: 8px 34px 8px 34px;
-  top:180px;
-  font-family: 'Tauri', sans-serif;
+  top: 180px;
+  font-family: "Tauri", sans-serif;
 }
-.Search-bar{
+.Search-bar {
   position: relative;
 }
-.logo-carrier{
+.logo-carrier {
   width: 100%;
   height: 50px;
   display: flex;
 }
-.logo{
+.logo {
   position: relative;
   width: 130px;
   height: 31.05px;
   top: 33px;
   left: 33px;
 }
-.footer{
+.footer {
   height: 200px;
   width: 100%;
 }
